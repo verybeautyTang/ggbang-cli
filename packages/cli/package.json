@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "module": "index.js",
+  "bin": {
+    "ggbang-cli": "bin/ggbang"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
