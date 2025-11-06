@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "module": "esnext",
+    "declaration": true,
+    "lib": ["DOM", "ESNext"],
+    "target": "es2015",
+    "moduleResolution": "node"
+  },
+  "include": ["packages/**/*"],
+  "exclude": ["node_modules"]
+}
