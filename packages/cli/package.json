@@ -4,6 +4,10 @@
   "description": "",
   "main": "index.js",
   "module": "index.js",
+  "files": [
+    "bin",
+    "dist"
+  ],
   "bin": {
     "ggbang-cli": "bin/ggbang"
   },
