@@ -1,22 +1,27 @@
 import globals from 'globals'
+import { defineConfig } from 'eslint/config'
 import js from '@eslint/js'
-import tslint from 'typescript-eslint'
+import tseslint from 'typescript-eslint'
 import parse from '@typescript-eslint/parser'
 
-export default tslint.config {
-  extends: [js.configs.recommended, ...tslint.config.recommended],
-  files: ['*.ts'],
-  ignores: ['*.js','node_modules'],
+export default defineConfig({
+  extends: [js.configs.recommended],
+  files: ['**/*.ts'],
+  ignores: ['*.js', 'node_modules'],
   rules: {
-    'no-console': 'error'
+    'no-console': 'error',
+  },
+  plugins: {
+    '@typescript-eslint': tseslint.plugin,
   },
   languageOptions: {
-    parser: tslint.parser,
+    parser: tseslint.parser,
     globals: {
-      ...globals.node
+      ...globals.node,
     },
     parserOptions: {
-      
-    }
-  }
-}
+      project: ['./tsconfig.eslint.json', '**/*/tsconfig.json'],
+      tsconfigRootDir: import.meta.dirname,
+    },
+  },
+})
