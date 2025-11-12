@@ -4,6 +4,7 @@
     "declaration": true,
     "lib": ["DOM", "ESNext"],
     "target": "es2015",
+    "allowSyntheticDefaultImports": true,
     "moduleResolution": "node"
   },
   "include": ["packages/**/*"],
