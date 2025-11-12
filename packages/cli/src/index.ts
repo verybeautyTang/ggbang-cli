@@ -4,7 +4,5 @@ import { run } from './commands'
 export const defineConfig = () => {}
 
 export const runCli = () => {
-  // eslint-disable-next-line no-console
-  console.log('hello nice to meet you ')
   run(process.argv)
 }

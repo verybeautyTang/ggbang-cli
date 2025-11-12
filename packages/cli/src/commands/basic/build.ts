@@ -1,3 +1,5 @@
+import { logger } from '../../utils/logger'
+
 export const build = (commandArgs) => {
-  console.log('我是 buildcli', commandArgs)
+  logger.info('this is buildcli', commandArgs)
 }

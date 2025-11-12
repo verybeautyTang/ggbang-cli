@@ -7,7 +7,7 @@ import parse from '@typescript-eslint/parser'
 export default defineConfig({
   extends: [js.configs.recommended],
   files: ['**/*.ts'],
-  ignores: ['*.js', 'node_modules'],
+  ignores: ['*.js', 'node_modules', 'dist'],
   rules: {
     'no-console': 'error',
   },
@@ -20,7 +20,7 @@ export default defineConfig({
       ...globals.node,
     },
     parserOptions: {
-      project: ['./tsconfig.eslint.json', '**/*/tsconfig.json'],
+      project: ['**/*/tsconfig.eslint.json', '**/*/tsconfig.json'],
       tsconfigRootDir: import.meta.dirname,
     },
   },
