@@ -13,7 +13,8 @@ export const create = (program: Command) => {
     .action(async (projectName, options) => {
       logger.info(picocolors.bgGreen(projectName))
       const { template } = options
-      // 在没有输入 template 的情况下给选择
+      logger.info(template)
+      // // 在没有输入 template 的情况下给选择
       if (!template) {
         const selectTemplate = {
           type: 'select',
@@ -31,9 +32,10 @@ export const create = (program: Command) => {
         }
         const resolves = await prompts(selectTemplate)
         const { template } = resolves
-        loadTemplate(projectName, template)
+        // loadTemplate({ projectName: projectName, template: template, local: false })
       } else {
-        loadTemplate(projectName, template)
+        // loadTemplate({ projectName, template, local: true })
+        loadTemplate({ projectName: projectName, template: template, local: true })
       }
     })
 }
