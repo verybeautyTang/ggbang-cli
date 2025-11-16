@@ -1,6 +1,8 @@
 // 插件注册机制
 import { program, Command } from 'commander'
 
+// const program = new Command()
+
 // eslint-disable-next-line no-unused-vars
 type Fn = (data: Command) => Command
 

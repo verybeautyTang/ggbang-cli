@@ -1,4 +1,6 @@
 import { logger } from '../../utils/logger'
+export const logger = createConsola()
+
 import type { Command } from 'commander'
 
 // 实现用户提问插件，一般用于 create 的时候用

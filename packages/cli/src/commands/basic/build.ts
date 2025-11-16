@@ -9,10 +9,10 @@ export const build = (program: Command) => {
     .action(() => {
       const Command = 'npm'
       const args = ['run', 'build']
-      const buildspawn = spawn(Command, args, {
+      const buildSpawn = spawn(Command, args, {
         stdio: 'inherit',
       })
-      buildspawn.on('close', (code: number) => {
+      buildSpawn.on('close', (code: number) => {
         logger.info('子进程退出，退出码：', code)
       })
     })
