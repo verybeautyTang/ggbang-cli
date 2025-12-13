@@ -1,0 +1,16 @@
+{
+  "name": "eslint",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "lint": "eslint ."
+  },
+  "author": "jasmineHe",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "9.39.2",
+    "@eslint/js": "9.39.2"
+  }
+}
