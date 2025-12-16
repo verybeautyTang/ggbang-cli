@@ -10,13 +10,13 @@ export const noJasmineRules = {
   },
   create: function (context) {
     return {
-      VariableDeclaration(node) {
-        node.name.toLowerCase() === 'jasmine'
-        console.log(node)
-        context.report({
-          node,
-          message: '禁止使用 jasmine 相关语法',
-        })
+      Identifier(node) {
+        if (node.name.toLowerCase() === 'jasmine') {
+          context.report({
+            node,
+            message: '禁止使用 jasmine 相关语法',
+          })
+        }
       },
     }
   },
