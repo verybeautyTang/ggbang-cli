@@ -20,62 +20,6 @@
 // 30 -> 475
 // 3888 -> 22377
 // 12345 -> 34170
-// function fee(orderNum) {
-//   let feeCount = 0
-//   let tempOrder = orderNum
-//   if (tempOrder > 0) {
-//     if (tempOrder > 6000) {
-//       feeCount += (tempOrder - 6000) * 1
-//       tempOrder = tempOrder - (tempOrder - 6000)
-//     }
-//     if (tempOrder > 5000 && tempOrder <= 6000) {
-//       feeCount += (tempOrder - 5000) * 2
-//       tempOrder = tempOrder - (tempOrder - 5000)
-//     }
-//     if (tempOrder > 4000 && tempOrder <= 5000) {
-//       feeCount += (tempOrder - 4000) * 3
-//       tempOrder = tempOrder - (tempOrder - 4000)
-//     }
-//     if (tempOrder > 3000 && tempOrder <= 4000) {
-//       feeCount += (tempOrder - 3000) * 4
-//       tempOrder = tempOrder - (tempOrder - 3000)
-//     }
-//     if (tempOrder > 2000 && tempOrder <= 3000) {
-//       feeCount += (tempOrder - 2000) * 5
-//       tempOrder = tempOrder - (tempOrder - 2000)
-//     }
-//     if (tempOrder > 1000 && tempOrder <= 2000) {
-//       feeCount += (tempOrder - 1000) * 6
-//       tempOrder = tempOrder - (tempOrder - 1000)
-//     }
-//     if (tempOrder > 500 && tempOrder <= 1000) {
-//       feeCount += (tempOrder - 500) * 7
-//       tempOrder = tempOrder - (tempOrder - 500)
-//     }
-//     if (tempOrder > 100 && tempOrder <= 500) {
-//       feeCount += (tempOrder - 100) * 8
-//       tempOrder = tempOrder - (tempOrder - 100)
-//     }
-//     if (tempOrder > 50 && tempOrder <= 100) {
-//       feeCount += (tempOrder - 50) * 9
-//       tempOrder = tempOrder - (tempOrder - 50)
-//     }
-//     if (tempOrder > 20 && tempOrder <= 50) {
-//       feeCount += (tempOrder - 20) * 10
-//       tempOrder = tempOrder - (tempOrder - 20)
-//     }
-//     if (tempOrder > 5 && tempOrder <= 20) {
-//       feeCount += (tempOrder - 5) * 15
-//       tempOrder = tempOrder - (tempOrder - 5)
-//     }
-//     if (tempOrder <= 5) {
-//       feeCount += tempOrder * 30
-//       tempOrder = 0
-//     }
-//   }
-//   return feeCount
-// }
-// console.log(fee(12345))
 
 const nodeList = [
   { id: 12, pay: 1, min: 6000 },
@@ -94,7 +38,7 @@ const nodeList = [
 function fee(orderNum) {
   let feeCount = 0
   let tempOrder = orderNum
-  for (let i = 0; i < 12; i++) {
+  for (let i = 0; i < nodeList.length; i++) {
     getCount(nodeList[i], tempOrder)
   }
   function getCount(node, count) {
